@@ -48,14 +48,14 @@ Users **register** and can later view their **past orders**.
 
 ### 🛒 Product
 
-Products **represent the items available for sale**.
+Products represent the **items available for sale**.
 
 | Method | Endpoint  | Description      |
 | ------ | --------- | ---------------- |
 | GET    | /products | Get all products |
 
 📌 Example Flow:  
-1️⃣ **User browses products** → `GET /products`
+1️⃣ User browses products → `GET /products`
 
 ### 📦 Order
 
@@ -67,38 +67,19 @@ Orders **handle the purchasing process**.
 | POST   | /orders/:id | Get order details |
 
 📌 Example Flow:  
-1️⃣ **User selects a product**  
-2️⃣ **User places an order** → `POST /orders`  
-3️⃣ **User receives an order summary** → `POST /orders/:id`
+1️⃣ User selects a product  
+2️⃣ User places an order → `POST /orders`  
+3️⃣ User receives an order summary → `POST /orders/:id`
 
 💡 Feel free to use AI, automation, or any tools that help you.
 We care about the final architecture and your decision-making, not how you get there.
 
-🚀 Submission Guidelines
-1️⃣ Clone the repository
+## 🚀 Submission Guidelines
 
-```sh
-git clone https://github.com/wisesight/wisesight-architecture-design-test.git
-cd wisesight-architecture-design-test
-```
-
-2️⃣ Create a new branch with your name
-
-```
-git checkout -b <your-name>
-```
-
-3️⃣ Refactor the API following best architectural practices
-
-4️⃣ Commit and push your changes
-
-```
-git add .
-git commit -m "Refactored API - <your-name>"
-git push origin <your-name>
-```
-
-5️⃣ Open a Pull Request (PR) to the main branch
+1️⃣ Fork the repository [See fork instructions](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)  
+2️⃣ Refactor the API following best architectural practices  
+3️⃣ Commit and push your changes  
+4️⃣ Open a Pull Request (PR) to the main branch [See how to create a pull request from a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 
 ## 📌 Next Steps
 
@@ -106,28 +87,19 @@ In the next interview session, we will discuss your decisions and review your co
 
 Be prepared to:
 
-🔹 Explain your reasoning behind architectural choices.
-
-🔹 Answer follow-up questions about trade-offs and scalability.
-
+🔹 Explain your reasoning behind architectural choices.  
+🔹 Answer follow-up questions about trade-offs and scalability.  
 🔹 Discuss how you would adapt the architecture for different scenarios.
 
-## 🚀 Setup Instructions
+## 🚀 Project Setup Instructions
 
-### 1️⃣ Clone the Repository
-
-```sh
-git clone https://github.com/wisesight/wisesight-architecture-design-test.git
-cd wisesight-architecture-design-test
-```
-
-### 2️⃣ Install Dependencies
+### 1️⃣ Install Dependencies
 
 ```sh
 npm install
 ```
 
-### 3️⃣ Start the Server
+### 2️⃣ Start the Server
 
 ```sh
 npm dev
