@@ -39,7 +39,7 @@ Users **register** and can later view their **past orders**.
 | Method | Endpoint          | Description         |
 | ------ | ----------------- | ------------------- |
 | POST   | /users/register   | Register a new user |
-| POST   | /users/:id/orders | Get user orders     |
+| GET    | /users/:id/orders | Get user orders     |
 
 📌 Example Flow:  
 1️⃣ User registers → `POST /users/register`  
