@@ -25,28 +25,12 @@ router.post("/", async (req: Request, res: Response): Promise<any> => {
   const newOrder = { id: uuidv4(), userId, productId, quantity, totalPrice };
 
   Order.createOne(newOrder);
-  product.stock -= quantity; // ⚠ Modifying stock directly (bad practice)
+  product.stock -= quantity;
+  Product.updateOne(product);
 
   res
     .status(201)
     .json({ message: "Order placed successfully", order: newOrder });
-});
-
-// 📑 Get all orders
-router.get("/", (_req: Request, res: Response) => {
-  res.json(Order.findAll());
-});
-
-// 📄 Get order details by ID
-router.get("/:id", async (req: Request, res: Response): Promise<any> => {
-  const { id } = req.params;
-
-  const order = Order.findOneById(id);
-  if (!order) {
-    return res.status(404).json({ error: "Order not found" });
-  }
-
-  res.json(order);
 });
 
 export default router;

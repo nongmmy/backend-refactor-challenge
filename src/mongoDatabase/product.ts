@@ -4,7 +4,20 @@ export type Product = {
   price: number;
   stock: number;
 };
-const products: Product[] = []; // pretend this is a mongoDB collection
+const products: Product[] = [
+  {
+    id: "1",
+    name: "Product 1",
+    price: 100,
+    stock: 3,
+  },
+  {
+    id: "2",
+    name: "Product 2",
+    price: 200,
+    stock: 5,
+  },
+]; // pretend this is a mongoDB collection
 export const updateOne = (product: Product) => {
   // let's pretend this is a mongoDB updateOne
   // you can move things around, but you don't have to implement real database operations, just pretend

@@ -21,6 +21,29 @@ Clarity in design decisions rather than a single "correct" solution.
 Separation of concerns and maintainability.
 Making the system more scalable, testable, and modular.
 
+## 📌 API Endpoints
+
+### 🛠 User Management
+
+| Method | Endpoint        | Description         |
+| ------ | --------------- | ------------------- |
+| POST   | /users/register | Register a new user |
+| POST   | /users/login    | Authenticate a user |
+
+### 🛒 Product Management
+
+| Method | Endpoint  | Description       |
+| ------ | --------- | ----------------- |
+| GET    | /products | Get all products  |
+| POST   | /products | Add a new product |
+
+### 📦 Order Management
+
+| Method | Endpoint    | Description       |
+| ------ | ----------- | ----------------- |
+| POST   | /orders     | Place an order    |
+| GET    | /orders/:id | Get order details |
+
 💡 Feel free to use AI, automation, or any tools that help you.
 We care about the final architecture and your decision-making, not how you get there.
 

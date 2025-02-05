@@ -9,22 +9,6 @@ router.get("/", (_req: Request, res: Response) => {
   res.json(products);
 });
 
-// ➕ Add a new product
-router.post("/", async (req: Request, res: Response): Promise<any> => {
-  const { name, price, stock } = req.body;
-
-  if (!name || !price || !stock) {
-    return res.status(400).json({ error: "All fields are required" });
-  }
-
-  const newProduct = { id: uuidv4(), name, price, stock };
-  createOne(newProduct);
-
-  res
-    .status(201)
-    .json({ message: "Product added successfully", product: newProduct });
-});
-
 // 🔄 Update product stock
 router.put("/:id", async (req: Request, res: Response): Promise<any> => {
   const { id } = req.params;
