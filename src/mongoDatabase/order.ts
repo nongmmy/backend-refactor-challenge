@@ -6,7 +6,29 @@ export type Order = {
   totalPrice: number;
 };
 
-const orders: Order[] = []; // pretend this is a mongoDB collection
+const orders: Order[] = [
+  {
+    id: "1",
+    userId: "1",
+    productId: "1",
+    quantity: 1,
+    totalPrice: 100,
+  },
+  {
+    id: "2",
+    userId: "1",
+    productId: "2",
+    quantity: 2,
+    totalPrice: 400,
+  },
+  {
+    id: "3",
+    userId: "2",
+    productId: "1",
+    quantity: 1,
+    totalPrice: 100,
+  },
+]; // pretend this is a mongoDB collection
 
 export const updateOne = (order: Order) => {
   // let's pretend this is a mongoDB updateOne
@@ -31,4 +53,8 @@ export const createOne = (order: Order) => {
   // let's pretend this is a mongoDB createOne
   // you can move things around, but you don't have to implement real database operations, just pretend
   orders.push(order);
+};
+
+export const findAllByUserId = (userId: string) => {
+  return orders.filter((o) => o.userId === userId);
 };

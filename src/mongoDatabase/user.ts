@@ -8,7 +8,19 @@ export type User = {
   isActive: boolean;
   role: "user" | "admin";
 };
-const users: User[] = []; // pretend this is a mongoDB collection
+const users: User[] = [
+  {
+    id: "1",
+    firstName: "John",
+    lastName: "Doe",
+    email: "john.doe@example.com",
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    isActive: true,
+    role: "user",
+  },
+]; // pretend this is a mongoDB collection
+
 export const updateOne = (user: User) => {
   // let's pretend this is a mongoDB updateOne
   // you can move things around, but you don't have to implement real database operations, just pretend
@@ -16,6 +28,12 @@ export const updateOne = (user: User) => {
   if (index !== -1) {
     users[index] = user;
   }
+};
+
+export const findOneById = (id: string) => {
+  // let's pretend this is a mongoDB findOne
+  // you can move things around, but you don't have to implement real database operations, just pretend
+  return users.find((u) => u.id === id);
 };
 
 export const findOneByEmail = (email: string) => {

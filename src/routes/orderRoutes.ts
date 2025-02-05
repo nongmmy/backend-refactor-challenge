@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 const router = express.Router();
 
 // 📦 Place a new order
+// stock should be updated, and the order should be created
 router.post("/", async (req: Request, res: Response): Promise<any> => {
   const { userId, productId, quantity } = req.body;
 
