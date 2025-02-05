@@ -2,7 +2,6 @@ import { Router, Request, Response } from "express";
 import { createOne, findOneByEmail } from "../mongoDatabase/user";
 import { v4 as uuidv4 } from "uuid";
 const router = Router();
-const users: { id: string; email: string; password: string }[] = [];
 
 router.post("/register", async (req: Request, res: Response) => {
   const { email, password } = req.body;
