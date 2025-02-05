@@ -15,12 +15,12 @@ This challenge will give us insight into **how you structure, refactor, and adap
 
 You will be working with a simplified e-commerce API that needs architectural improvement.
 
-Your task is to refactor the API:
+Your task is to ✨**refactor**✨ the API:
 
 - Make the API more scalable, testable, and modular.
 - Improve the code readability and maintainability.
 
-## 📌 How These Routes Work in a Commesrcial Platform
+## 📌 How These Routes Work in a Commercial Platform
 
 This API represents a basic e-commerce platform, where users can:  
 ✅ Register an account  
