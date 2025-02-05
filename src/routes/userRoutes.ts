@@ -1,22 +1,22 @@
-import { Router, Request, Response } from "express";
+import express, { Request, Response } from "express";
 import { createOne, findOneByEmail } from "../mongoDatabase/user";
 import { v4 as uuidv4 } from "uuid";
-const router = Router();
+const router = express.Router();
 
-router.post("/register", async (req: Request, res: Response) => {
+router.post("/register", async (req: Request, res: Response): Promise<any> => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    res.status(400).json({ error: "Email and password are required" });
+    return res.status(400).json({ error: "Email and password are required" });
   }
 
   if (!email.includes("@")) {
-    res.status(400).json({ error: "Invalid email format" });
+    return res.status(400).json({ error: "Invalid email format" });
   }
 
   const existingUser = findOneByEmail(email);
   if (existingUser) {
-    res.status(400).json({ error: "User already exists" });
+    return res.status(400).json({ error: "User already exists" });
   }
 
   const newUser = {
