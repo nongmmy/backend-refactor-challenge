@@ -87,7 +87,7 @@ Orders **handle the purchasing process**.
 
 📌 Example Flow:  
 1️⃣ User selects a product  
-2️⃣ User places an order → `POST /orders` (to simplify this, we allow users to order with one product at a time)
+2️⃣ User places an order → `POST /orders` (to simplify this, we allow users to order with one product at a time)  
 3️⃣ User receives an order summary → `POST /orders/:id`
 
 💡 Feel free to use AI, automation, or any tools that help you.
