@@ -106,9 +106,9 @@ In the next interview session, we will discuss your decisions and review your co
 
 Be prepared to discuss:
 
-🔹 Explain your reasoning behind architectural choices. s
+🔹 Explain your reasoning behind architectural choices.  
 🔹 Answer follow-up questions about trade-offs and scalability.  
-🔹 Discuss how you would adapt the architecture for different scenarios.
+🔹 Discuss how you would adapt the architecture for different scenarios.  
 
 ## 🚀 Project Setup Instructions
 
