@@ -77,7 +77,7 @@ We care about the final architecture and your decision-making, not how you get t
 ## 🚀 Submission Guidelines
 
 1️⃣ Fork the repository [See fork instructions](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)  
-2️⃣ Refactor the API following best architectural practices  
+2️⃣ Refactor the API
 3️⃣ Commit and push your changes  
 4️⃣ Open a Pull Request (PR) to the main branch [See how to create a pull request from a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 
