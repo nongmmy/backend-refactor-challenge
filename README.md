@@ -2,7 +2,7 @@
 
 Welcome to the **Wisesight Architecture Design Challenge**!
 
-This challenge is designed to **assess your ability to design architecture**.
+This challenge is designed to **assess your ability to design scalable architecture**.
 
 What we are really interested in is:  
 ✅ **Your thought process**—how you analyze and approach the problem.  
@@ -13,26 +13,45 @@ This challenge will give us insight into **how you structure, refactor, and adap
 
 ## 🔥 What You'll Be Doing:
 
-You will be working with a simplified e-commerce API that needs architectural improvement.
+You will be working with a simplified e-commerce API that needs architectural improvement. While this is a simplified version, imagine this system scaling to:
 
-Your task is to ✨**refactor**✨ the API:
+- 5000+ API routes
+- Multiple development teams (3+ teams) working independently:
+  - User Registration Team (Authentication, User Management)
+  - Product Team (Catalog, Inventory, Pricing)
+  - Order Team (Cart, Checkout, Order Management)
+- High traffic load (millions of requests per day)
+- Frequent deployments from different teams
 
-- Make the API more scalable, testable, and modular.
-- Improve the code readability and maintainability.
+Your task is to ✨**refactor**✨ the API considering these scale factors:
 
-## 📌 How These Routes Work in a Commercial Platform
+- Make the API more scalable, testable, and modular
+- Design the architecture to support independent team development
+- Implement clear boundaries between different domains
+- Ensure the system can be easily extended with new features
+- Improve the code readability and maintainability
+- Consider how to handle cross-cutting concerns across teams
 
-This API represents a basic e-commerce platform, where users can:  
-✅ Register an account  
-✅ Browse products  
-✅ Place orders  
-✅ View their past orders
+## 📌 System Context
 
-Each route plays a specific role in simulating a real-world e-commerce flow.
+This API represents an enterprise e-commerce platform that will be:
+
+- Managed by multiple independent teams
+- Deployed independently (microservices/modular monolith)
+- Handling high-volume traffic
+- Requiring different scaling needs per domain
+
+Each team should be able to:
+
+- Deploy their changes independently
+- Scale their services based on their specific needs
+- Maintain their own database schemas
+- Implement domain-specific business logic
+- Handle cross-cutting concerns effectively
 
 ## 📌 API Endpoints
 
-### 🛠 User Routes
+### 🛠 User Routes (Managed by User Registration Team)
 
 Users **register** and can later view their **past orders**.
 
@@ -46,7 +65,7 @@ Users **register** and can later view their **past orders**.
 2️⃣ User places an order → `POST /orders`  
 3️⃣ User checks their order history → `POST /users/:id/orders`
 
-### 🛒 Product
+### 🛒 Product Routes (Managed by Product Team)
 
 Products represent the **items available for sale**.
 
@@ -57,7 +76,7 @@ Products represent the **items available for sale**.
 📌 Example Flow:  
 1️⃣ User browses products → `GET /products`
 
-### 📦 Order
+### 📦 Order Routes (Managed by Order Team)
 
 Orders **handle the purchasing process**.
 
@@ -85,9 +104,9 @@ We care about the final architecture and your decision-making, not how you get t
 
 In the next interview session, we will discuss your decisions and review your code together.
 
-Be prepared to:
+Be prepared to discuss:
 
-🔹 Explain your reasoning behind architectural choices.  
+🔹 Explain your reasoning behind architectural choices. s
 🔹 Answer follow-up questions about trade-offs and scalability.  
 🔹 Discuss how you would adapt the architecture for different scenarios.
 
