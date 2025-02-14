@@ -1,0 +1,26 @@
+{
+  "name": "user",
+  "version": "1.0.0",
+  "description": "The Users service handles registration and allows users to view their order history.",
+  "license": "ISC",
+  "author": "",
+  "main": "server.ts",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon dist/server.js",
+    "dev": "nodemon src/server.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "uuid": "^11.0.5"
+  }
+}
