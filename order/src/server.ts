@@ -1,16 +1,12 @@
 import express, { Request, Response, Router } from "express";
 import dotenv from "dotenv";
-// import userRoutes from "./routes/userRoutes";
-// import productRoutes from "./sdf/productRoutes";
-import orderRoutes from "./routes/orderRoutes";
+import orderRoutes from "./infrastructure/routes/order.route";
 
 dotenv.config();
 const app = express();
 
 app.use(express.json());
 
-// app.use("/users", userRoutes);
-// app.use("/products", productRoutes);
 app.use("/orders", orderRoutes);
 
 app.get("/", (req: Request, res: Response) => {
