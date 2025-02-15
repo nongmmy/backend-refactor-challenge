@@ -5,7 +5,6 @@ import { Request, Response } from "express";
 
 export class RegisterUsecase {
 
-
   constructor(private userRepository: UserRepositoryInterface) { }
 
   execute = (email: string, password: string) => {
