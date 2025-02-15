@@ -1,32 +1,33 @@
+import { v4 as uuidv4 } from "uuid";
+
 import { OrderRepositoryInterface } from "../domain/repositories/orderRepository.interface"
+import { ProductRepositoryInterface } from "../domain/repositories/productRepository.interface"
 
 export class PlaceOrderUsecase {
-  constructor(private orderRepository: OrderRepositoryInterface) { }
+  constructor(
+    private orderRepository: OrderRepositoryInterface,
+    private productRepository: ProductRepositoryInterface
+  ) { }
 
-  execute = (userId: number, productId: number, quantity: number) => {
+  execute = async (userId: string, productId: string, quantity: number) => {
     if (!userId || !productId || !quantity || quantity <= 0) {
       throw new Error("Invalid order details")
     }
 
-    // const product = Product.findOneById(productId);
-    // if (!product) {
-    //   throw new Error("Product not found")
-    // }
+    const product = await this.productRepository.findOneById(productId);
 
-    // if (product.stock < quantity) {
-    //   return res.status(400).json({ error: "Insufficient stock" });
-    // }
+    if (product.stock < quantity) {
+      throw new Error("Insufficient stock")
+    }
 
-    // const totalPrice = product.price * quantity;
-    // const newOrder = { id: uuidv4(), userId, productId, quantity, totalPrice };
+    const totalPrice = product.price * quantity;
+    const newOrder = { id: uuidv4(), userId, productId, quantity, totalPrice };
 
-    // Order.createOne(newOrder);
-    // product.stock -= quantity;
-    // Product.updateOne(product);
+    this.orderRepository.createOne(newOrder);
+    product.stock -= quantity;
+    this.productRepository.updateOne(product);
 
-    // res
-    //   .status(201)
-    //   .json({ message: "Order placed successfully", order: newOrder });
+    return newOrder
 
   }
 }

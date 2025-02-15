@@ -1,10 +1,13 @@
 import express, { Request, Response, Router } from "express";
 import dotenv from "dotenv";
+
 import orderRoutes from "./infrastructure/routes/order.route";
+import { errorHandler } from "./infrastructure/middlewares/errorHandler";
 
 dotenv.config();
 const app = express();
 
+app.use(errorHandler);
 app.use(express.json());
 
 app.use("/orders", orderRoutes);
