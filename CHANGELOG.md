@@ -1,15 +1,14 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
-
-## [Unreleased]
+All changes to this project will be documented in this file.
 
 ### Changed
 
-- Break down the monolithic API into domain microservices. Each microservice has it's own database: User Service, Product Service and Order Service. 
-- Restructured all service structure to follow Clean Architecture principles.
+- Break down the monolithic API into domain microservices. Each microservice has it's own database: User Service, Product Service and Order Service.
+- Microservices communicate with each other using api requests. 
+- Restructure all service structure to follow Clean Architecture principles.
 - Apply SOLID principles, dependency injection, making it easier to test and extend.
-- Male the api support versioning
+- Enable api versioning support.
 
 ### Added
 
@@ -21,7 +20,7 @@ All notable changes to this project will be documented in this file.
 - Environment variables, making it easier to run local.
 
 
-## 📌 [API Endpoints Summary]
+## 📌 API Endpoints Summary
 
 ### 🛠 User Routes 
 
@@ -36,18 +35,20 @@ Users **register** and can later view their **past orders**.
 
 Products represent the **items available for sale**.
 
-| Method | Endpoint       | Description            |
-| ------ | ---------------| ---------------------- |
-| GET    | /products      | Get all products       |
-| GET    | /products/:id  | Get product details    |
-| PUT    | /products/:id  | Update product details |
+| Method | Endpoint       | Description             |
+| ------ | ---------------| ----------------------- |
+| GET    | /products      | Get all products        |
+| GET    | /products/:id  | Get product details :sparkles:    | 
+| PUT    | /products/:id  | Update product details :sparkles: |
 
 ### 📦 Order Routes
 
 Orders **handle the purchasing process**.
 
-| Method | Endpoint    | Description       |
-| ------ | ----------- | ----------------- |
-| POST   | /orders     | Place an order    |
-| GET    | /orders/:id | Get order details |
-| GET    | /orders     | Search all orders |
+| Method | Endpoint    | Description        |
+| ------ | ----------- | ------------------ |
+| POST   | /orders     | Place an order     |
+| GET    | /orders/:id | Get order details  |
+| GET    | /orders     | Search all orders :sparkles: |
+
+ :sparkles: new endpoint
