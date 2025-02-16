@@ -4,17 +4,25 @@ import { PlaceOrderUsecase } from "../../usecases/placeOrder.usecase";
 import { GetOrdersUsecase } from "../../usecases/getOrders.usecase";
 import { OrderRepository } from "../repositories/order.repository";
 import { ProductRepository } from "../repositories/product.repository";
+import { GetOrderDetailsUsecase } from "../../usecases/getOrderDetails.usecase";
 
 
 const router = express.Router();
 
+// repositories
 const orderRepository = new OrderRepository();
 const productRepository = new ProductRepository();
+
+// usecases
 const placeOrderUsecase = new PlaceOrderUsecase(orderRepository, productRepository);
-const getOrders = new GetOrdersUsecase(orderRepository);
-const orderController = new OrderController(placeOrderUsecase, getOrders);
+const getOrdersUsecase = new GetOrdersUsecase(orderRepository);
+const getOrderDetailUsecase = new GetOrderDetailsUsecase(orderRepository);
+
+// controllers
+const orderController = new OrderController(placeOrderUsecase, getOrdersUsecase, getOrderDetailUsecase);
 
 router.post("/", orderController.placeOrder);
 router.get("/", orderController.getOrders);
+router.get("/:orderId", orderController.getOrderDetails);
 
 export default router;
