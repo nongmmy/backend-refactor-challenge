@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/users", userRoutes);
+app.use("/v1/users", userRoutes);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200).json({ message: "Hello World" });

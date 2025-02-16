@@ -1,6 +1,5 @@
 import express, { Request, Response, Router } from "express";
 import dotenv from "dotenv";
-
 import orderRoutes from "./infrastructure/routes/order.route";
 import { errorHandler } from "./infrastructure/middlewares/errorHandler";
 
@@ -10,7 +9,7 @@ const app = express();
 app.use(errorHandler);
 app.use(express.json());
 
-app.use("/orders", orderRoutes);
+app.use("/v1/orders", orderRoutes);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200).json({ message: "Hello World" });
