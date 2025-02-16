@@ -1,5 +1,5 @@
-import { Order } from "../domain/model/order";
-import { GetOrdersUsecase } from "../usecases/getOrders.usecase";
+import { Order } from "../../domain/model/order";
+import { GetOrdersUsecase } from "../getOrders.usecase";
 
 describe('GetOrdersUsecase', () => {
   let orderRepository: any;

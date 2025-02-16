@@ -1,8 +1,8 @@
 import * as uuid from "uuid";
 
-import { Order } from "../domain/model/order";
-import { PlaceOrderUsecase } from "../usecases/placeOrder.usecase";
-import { Product } from "../domain/model/product";
+import { Order } from "../../domain/model/order";
+import { PlaceOrderUsecase } from "../placeOrder.usecase";
+import { Product } from "../../domain/model/product";
 
 jest.mock('uuid');
 

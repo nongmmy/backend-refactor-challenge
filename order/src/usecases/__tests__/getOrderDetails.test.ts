@@ -1,7 +1,7 @@
-import { Order } from "../domain/model/order";
-import { GetOrderDetailsUsecase } from "../usecases/getOrderDetails.usecase";
+import { Order } from "../../domain/model/order";
+import { GetOrderDetailsUsecase } from "../getOrderDetails.usecase";
 
-describe('GetOrderDetialsUsecase', () => {
+describe('GetOrderDetailsUsecase', () => {
 
   let orderRepository: any;
   let getOrderDetailsUsecase: GetOrderDetailsUsecase;
@@ -30,7 +30,7 @@ describe('GetOrderDetialsUsecase', () => {
 
   });
 
-  test('should throw error when order not found.', async () => {
+  test('should throw error when order not found', async () => {
     const fakeOrder = undefined;
 
     orderRepository.findOneById.mockReturnValue(fakeOrder);
