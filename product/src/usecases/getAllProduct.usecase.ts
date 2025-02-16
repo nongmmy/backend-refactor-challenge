@@ -4,8 +4,8 @@ export class GetAllProductsUsecase {
 
   constructor(private productRepository: ProductRepositoryInterface) { }
 
-  execute() {
+  execute = () => {
     const products = this.productRepository.findAll();
     return products;
-  }
+  };
 }

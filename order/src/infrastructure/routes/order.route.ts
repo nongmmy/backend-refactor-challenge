@@ -1,14 +1,15 @@
 import express from "express";
+
 import { OrderController } from "../controller/order.controller";
 import { PlaceOrderUsecase } from "../../usecases/placeOrder.usecase";
 import { GetOrdersUsecase } from "../../usecases/getOrders.usecase";
+import { GetOrderDetailsUsecase } from "../../usecases/getOrderDetails.usecase";
 import { OrderRepository } from "../repositories/order.repository";
 import { ProductRepository } from "../repositories/product.repository";
-import { GetOrderDetailsUsecase } from "../../usecases/getOrderDetails.usecase";
-
 
 const router = express.Router();
 
+// inject the instance here
 // repositories
 const orderRepository = new OrderRepository();
 const productRepository = new ProductRepository();

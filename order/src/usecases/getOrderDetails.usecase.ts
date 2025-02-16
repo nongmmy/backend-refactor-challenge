@@ -3,12 +3,12 @@ import { OrderRepositoryInterface } from "../domain/repositories/orderRepository
 export class GetOrderDetailsUsecase {
   constructor(private orderRepository: OrderRepositoryInterface) { }
 
-  execute(orderId: string) {
+  execute = (orderId: string) => {
     const order = this.orderRepository.findOneById(orderId);
     if (!order) {
       throw new Error("Order not found");
     }
 
     return order;
-  }
+  };
 }

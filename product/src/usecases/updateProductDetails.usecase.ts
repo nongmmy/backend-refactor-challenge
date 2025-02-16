@@ -4,7 +4,7 @@ import { ProductRepositoryInterface } from "../domain/repositories/productReposi
 export class UpdateProductDetailsUsecase {
   constructor(private productRepository: ProductRepositoryInterface) { }
 
-  execute(product: Product) {
+  execute = (product: Product) => {
     this.productRepository.updateOne(product);
-  }
+  };
 }

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { GetAllProductsUsecase } from "../../usecases/getAllProduct.usecase";
-import { GetProductDetailsUsecase } from "../../usecases/getProductById.usecase";
+import { GetProductDetailsUsecase } from "../../usecases/getProductDetails.usecase";
 import { UpdateProductDetailsUsecase } from "../../usecases/updateProductDetails.usecase";
 
 export class ProductController {
@@ -16,7 +16,7 @@ export class ProductController {
     res.json(products);
   };
 
-  getProductById = (req: Request, res: Response) => {
+  getProductDetails = (req: Request, res: Response) => {
     try {
       const { productId } = req.params;
 

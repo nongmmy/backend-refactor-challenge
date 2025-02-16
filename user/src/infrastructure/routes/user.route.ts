@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 
 import { UserController } from "../controller/user.controller";
 import { RegisterUsecase } from "../../usecases/register.usecase";
@@ -9,6 +9,7 @@ import { ProductRepository } from "../repositories/product.repository";
 
 const router = express.Router();
 
+// inject the instance here
 // repositories
 const orderRepository = new OrderRepository();
 const productRepository = new ProductRepository();

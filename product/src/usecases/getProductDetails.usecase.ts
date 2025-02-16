@@ -3,12 +3,12 @@ import { ProductRepositoryInterface } from "../domain/repositories/productReposi
 export class GetProductDetailsUsecase {
   constructor(private productRepository: ProductRepositoryInterface) { }
 
-  execute(productId: string) {
+  execute = (productId: string) => {
     const product = this.productRepository.findOneById(productId);
     if (!product) {
       throw new Error("Product not found");
     }
 
     return product;
-  }
+  };
 }

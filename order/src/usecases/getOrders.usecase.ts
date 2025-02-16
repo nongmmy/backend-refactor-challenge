@@ -3,7 +3,7 @@ import { OrderRepositoryInterface } from "../domain/repositories/orderRepository
 export class GetOrdersUsecase {
   constructor(private orderRepository: OrderRepositoryInterface) { }
 
-  execute(userId: string | undefined) {
+  execute = (userId: string | undefined) => {
     if (userId) {
       const orders = this.orderRepository.findAllByUserId(userId);
       return orders;
@@ -11,5 +11,5 @@ export class GetOrdersUsecase {
       const orders = this.orderRepository.findAll();
       return orders;
     }
-  }
+  };
 }

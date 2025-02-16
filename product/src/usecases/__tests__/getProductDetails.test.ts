@@ -1,5 +1,5 @@
 import { Product } from "../../domain/model/product";
-import { GetProductDetailsUsecase } from "../getProductById.usecase";
+import { GetProductDetailsUsecase } from "../getProductDetails.usecase";
 
 describe('GetProductDetailsUsecase', () => {
 
