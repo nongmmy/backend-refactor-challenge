@@ -1,7 +1,7 @@
 import express from "express";
 import { ProductController } from "../controller/product.controller";
-import { GetAllProductUsecase } from "../../usecases/getAllProduct.usecase";
-import { GetProductByIdUsecase } from "../../usecases/getProductById.usecase";
+import { GetAllProductsUsecase } from "../../usecases/getAllProduct.usecase";
+import { GetProductDetailsUsecase } from "../../usecases/getProductById.usecase";
 import { UpdateProductDetailsUsecase } from "../../usecases/updateProductDetails.usecase";
 import { ProductRepository } from "../repositories/product.repository";
 
@@ -11,12 +11,12 @@ const router = express.Router();
 const productRepository = new ProductRepository();
 
 // usecase
-const getAllProductUsecase = new GetAllProductUsecase(productRepository);
-const getProductByIdUsecase = new GetProductByIdUsecase(productRepository);
+const getAllProductsUsecase = new GetAllProductsUsecase(productRepository);
+const getProductDetailsUsecase = new GetProductDetailsUsecase(productRepository);
 const updateProductDetailsUsecase = new UpdateProductDetailsUsecase(productRepository);
 
 // controller
-const productController = new ProductController(getAllProductUsecase, getProductByIdUsecase, updateProductDetailsUsecase);
+const productController = new ProductController(getAllProductsUsecase, getProductDetailsUsecase, updateProductDetailsUsecase);
 
 router.get("/", productController.getAllProduct);
 router.get("/:productId", productController.getProductById);

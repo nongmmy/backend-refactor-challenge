@@ -1,18 +1,18 @@
 import { Request, Response } from "express";
-import { GetAllProductUsecase } from "../../usecases/getAllProduct.usecase";
-import { GetProductByIdUsecase } from "../../usecases/getProductById.usecase";
+import { GetAllProductsUsecase } from "../../usecases/getAllProduct.usecase";
+import { GetProductDetailsUsecase } from "../../usecases/getProductById.usecase";
 import { UpdateProductDetailsUsecase } from "../../usecases/updateProductDetails.usecase";
 
 export class ProductController {
 
   constructor(
-    private getAllProductUsecase: GetAllProductUsecase,
-    private getProductByIdUsecase: GetProductByIdUsecase,
+    private getAllProductsUsecase: GetAllProductsUsecase,
+    private getProductDetailsUsecase: GetProductDetailsUsecase,
     private updateProductDetailsUsecase: UpdateProductDetailsUsecase,
   ) { }
 
   getAllProduct = (req: Request, res: Response) => {
-    const products = this.getAllProductUsecase.execute();
+    const products = this.getAllProductsUsecase.execute();
     res.json(products);
   };
 
@@ -20,7 +20,7 @@ export class ProductController {
     try {
       const { productId } = req.params;
 
-      const product = this.getProductByIdUsecase.execute(productId);
+      const product = this.getProductDetailsUsecase.execute(productId);
       res.json(product);
 
     } catch (error: any) {
