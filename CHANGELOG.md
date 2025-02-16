@@ -1,0 +1,53 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+
+### Changed
+
+- Break down the monolithic API into domain microservices. Each microservice has it's own database: User Service, Product Service and Order Service. 
+- Restructured all service structure to follow Clean Architecture principles.
+- Apply SOLID principles, dependency injection, making it easier to test and extend.
+- Male the api support versioning
+
+### Added
+
+- New endpoint to product service: Get product details
+- New endpoint to product service: Update product details
+- New endpoint to order service: Search all orders
+- Unit tests
+- New postman request collection for supporting new endpoint
+- Environment variables, making it easier to run local.
+
+
+## 📌 [API Endpoints Summary]
+
+### 🛠 User Routes 
+
+Users **register** and can later view their **past orders**.
+
+| Method | Endpoint          | Description         |
+| ------ | ----------------- | ------------------- |
+| POST   | /users/register   | Register a new user |
+| GET    | /users/:id/orders | Get user orders     |
+
+### 🛒 Product Routes
+
+Products represent the **items available for sale**.
+
+| Method | Endpoint       | Description            |
+| ------ | ---------------| ---------------------- |
+| GET    | /products      | Get all products       |
+| GET    | /products/:id  | Get product details    |
+| PUT    | /products/:id  | Update product details |
+
+### 📦 Order Routes
+
+Orders **handle the purchasing process**.
+
+| Method | Endpoint    | Description       |
+| ------ | ----------- | ----------------- |
+| POST   | /orders     | Place an order    |
+| GET    | /orders/:id | Get order details |
+| GET    | /orders     | Search all orders |
