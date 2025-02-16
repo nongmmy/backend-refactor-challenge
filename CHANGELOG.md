@@ -12,12 +12,13 @@ All changes to this project will be documented in this file.
 
 ### Added
 
-- New endpoint to product service: Get product details
-- New endpoint to product service: Update product details
-- New endpoint to order service: Search all orders
-- Unit tests
-- New postman request collection for supporting new endpoint
-- Environment variables, making it easier to run local.
+- New endpoint to Product Service: Get product details.
+- New endpoint to Product Service: Update product details.
+- New endpoint to Order Service: Search all orders.
+- HTTP request logger middleware.
+- Unit tests.
+- New postman request collection to support new endpoint.
+- Environment variables, making it easier to run app locally.
 
 
 ## 📌 API Endpoints Summary
