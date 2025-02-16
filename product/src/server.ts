@@ -1,10 +1,12 @@
 import express, { Request, Response, Router } from "express";
 import dotenv from "dotenv";
 import productRoutes from "./infrastructure/routes/product.route";
+import { accessLogger } from "./infrastructure/middlewares/logger";
 
 dotenv.config();
 const app = express();
 
+app.use(accessLogger);
 app.use(express.json());
 
 app.use("/v1/products", productRoutes);
