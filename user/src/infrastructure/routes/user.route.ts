@@ -9,13 +9,16 @@ import { ProductRepository } from "../repositories/product.repository";
 
 const router = express.Router();
 
+// repositories
 const orderRepository = new OrderRepository();
 const productRepository = new ProductRepository();
 const userRepository = new UserRepository();
 
+// usecases
 const registerUsecase = new RegisterUsecase(userRepository);
 const getUserOrderUsecase = new GetUserOrderUsecase(orderRepository, productRepository, userRepository);
 
+// controllers
 const userController = new UserController(registerUsecase, getUserOrderUsecase);
 
 router.post("/register", userController.register);

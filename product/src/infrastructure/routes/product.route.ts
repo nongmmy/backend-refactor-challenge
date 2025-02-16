@@ -7,19 +7,19 @@ import { ProductRepository } from "../repositories/product.repository";
 
 const router = express.Router();
 
+// repository
 const productRepository = new ProductRepository();
+
+// usecase
 const getAllProductUsecase = new GetAllProductUsecase(productRepository);
 const getProductByIdUsecase = new GetProductByIdUsecase(productRepository);
 const updateProductDetailsUsecase = new UpdateProductDetailsUsecase(productRepository);
+
+// controller
 const productController = new ProductController(getAllProductUsecase, getProductByIdUsecase, updateProductDetailsUsecase);
 
-// 🛒 Get all products
 router.get("/", productController.getAllProduct);
-
-// Get Product by id
 router.get("/:productId", productController.getProductById);
-
-// Update Product details
 router.put("/:productId", productController.updateProductDetails);
 
 export default router;

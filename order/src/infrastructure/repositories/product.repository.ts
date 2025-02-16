@@ -1,30 +1,22 @@
-import axios from 'axios'
+import axios from 'axios';
 
-import { ProductRepositoryInterface } from '../../domain/repositories/productRepository.interface'
-import { Product } from '../../domain/model/product'
+import { ProductRepositoryInterface } from '../../domain/repositories/productRepository.interface';
+import { Product } from '../../domain/model/product';
 
 export class ProductRepository implements ProductRepositoryInterface {
+
+  private apiUrl = process.env.PRODUCT_URL;
+
   findOneById = async (productId: string) => {
+    const fullUrl = `${this.apiUrl}/${productId}`;
 
-    // API endpoint for fetching recent users
-    const apiUrl = 'http://localhost:3001/products';
-
-    // Combine API endpoint with query parameters
-    const fullUrl = `${apiUrl}/${productId}`;
-
-
-    const result = await axios.get(fullUrl)
-    return result.data
-  }
+    const result = await axios.get(fullUrl);
+    return result.data;
+  };
 
   updateOne = async (product: Product) => {
-    // API endpoint for fetching recent users
-    const apiUrl = 'http://localhost:3001/products';
+    const fullUrl = `${this.apiUrl}/${product.id}`;
 
-    // Combine API endpoint with query parameters
-    const fullUrl = `${apiUrl}/${product.id}`;
-
-
-    await axios.put(fullUrl, product)
-  }
+    await axios.put(fullUrl, product);
+  };
 }

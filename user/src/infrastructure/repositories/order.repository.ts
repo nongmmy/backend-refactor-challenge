@@ -4,22 +4,16 @@ import { OrderRepositoryInterface } from "../../domain/repositories/orderReposit
 export class OrderRepository implements OrderRepositoryInterface {
 
   findAllByUserId = async (userId: string) => {
-    // API endpoint for fetching recent users
-    const apiUrl = 'http://localhost:3000/orders';
-
-    // Set up query parameters
+    const apiUrl = process.env.ORDER_URL;
     const queryParams = {
       userId,
     };
 
-    // Convert query parameters to a string
     const queryString = new URLSearchParams(queryParams).toString();
 
-    // Combine API endpoint with query parameters
     const fullUrl = `${apiUrl}?${queryString}`;
 
-
-    const result = await axios.get(fullUrl)
-    return result.data
-  }
+    const result = await axios.get(fullUrl);
+    return result.data;
+  };
 }

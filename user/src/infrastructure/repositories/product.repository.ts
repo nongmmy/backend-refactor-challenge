@@ -3,14 +3,11 @@ import { ProductRepositoryInterface } from "../../domain/repositories/productRep
 
 export class ProductRepository implements ProductRepositoryInterface {
   findOneById = async (productId: string) => {
-    // API endpoint for fetching recent users
-    const apiUrl = 'http://localhost:3001/products';
+    const apiUrl = process.env.PRODUCT_URL;
 
-    // Combine API endpoint with query parameters
     const fullUrl = `${apiUrl}/${productId}`;
 
-
-    const result = await axios.get(fullUrl)
-    return result.data
-  }
+    const result = await axios.get(fullUrl);
+    return result.data;
+  };
 }
